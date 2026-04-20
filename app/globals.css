@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1da851;
+  --color-o-operator: #E30611;
+  --color-megacom: #6B2D83;
+  --color-beeline: #FFB900;
+  --color-muted: #f5f5f5;
+  --radius: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
