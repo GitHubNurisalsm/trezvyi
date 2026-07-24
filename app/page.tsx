@@ -3,6 +3,9 @@ import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { TariffsSection } from "@/components/tariffs-section";
 import { Footer } from "@/components/footer";
+import { HowItWorksSection } from "@/components/how-it-works-section";
+import { ServiceAreaSection } from "@/components/service-area-section";
+import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
 const localBusinessJsonLd = {
@@ -13,18 +16,16 @@ const localBusinessJsonLd = {
   description: siteConfig.description,
   url: siteConfig.url,
   telephone: siteConfig.phone,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: siteConfig.phone,
+    contactType: "customer service",
+    availableLanguage: ["ru", "ky"],
+    areaServed: "KG",
+  },
   image: `${siteConfig.url}/images/driver.jpg`,
-  priceRange: "800–1500 KGS",
-  areaServed: [
-    {
-      "@type": "City",
-      name: "Бишкек",
-    },
-    {
-      "@type": "Country",
-      name: "Кыргызстан",
-    },
-  ],
+  priceRange: "от 800 KGS",
+  areaServed: { "@type": "City", name: siteConfig.city },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
@@ -42,15 +43,10 @@ const localBusinessJsonLd = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Услуги помощи водителям",
-    itemListElement: [
-      "Трезвый водитель",
-      "Доставка бензина",
-      "Подкачка колёс",
-      "Запуск автомобиля",
-      "Буксировка",
-    ].map((name) => ({
+    itemListElement: services.map((service) => ({
       "@type": "Offer",
-      itemOffered: { "@type": "Service", name },
+      priceCurrency: "KGS",
+      itemOffered: { "@type": "Service", name: service.title },
     })),
   },
 };
@@ -66,8 +62,10 @@ export default function Home() {
       />
       <Header />
       <HeroSection />
+      <HowItWorksSection />
       <ServicesSection />
       <TariffsSection />
+      <ServiceAreaSection />
       <Footer />
     </main>
   );

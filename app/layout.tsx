@@ -1,12 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "700", "800", "900"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -84,7 +78,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

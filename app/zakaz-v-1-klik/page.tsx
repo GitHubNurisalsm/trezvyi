@@ -36,7 +36,7 @@ export default function OneClickOrderPage() {
             Назад на главную
           </Link>
 
-          <div className="overflow-hidden rounded-[2rem] border-4 border-black bg-black px-4 py-10 text-white md:px-10 md:py-14" style={{padding:"5px"}}>
+          <div className="overflow-hidden rounded-[2rem] border-4 border-black bg-black px-6 py-10 text-white md:px-10 md:py-14">
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#86efac]">
               Заказ в 1 клик
             </p>
@@ -52,7 +52,7 @@ export default function OneClickOrderPage() {
             {oneClickServices.map((service, index) => (
               <div
                 key={service.title}
-                className="flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border-4 border-black bg-white p-6 transition duration-200 hover:-translate-y-1 hover:bg-[#f0fdf4]" style={{padding:"5px"}} 
+                className="flex min-h-[250px] flex-col justify-between rounded-[1.75rem] border-4 border-black bg-white p-6 transition duration-200 hover:-translate-y-1 hover:bg-[#f0fdf4]"
               >
                 <div>
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#dcfce7] text-lg font-black text-black">
@@ -64,6 +64,7 @@ export default function OneClickOrderPage() {
                   <p className="mt-3 text-base font-medium leading-relaxed text-black/70">
                     {service.description}
                   </p>
+                  <p className="mt-3 text-base font-black text-black">{service.price}</p>
                 </div>
 
                 <a
@@ -72,7 +73,7 @@ export default function OneClickOrderPage() {
                   rel="noopener noreferrer"
                   className="group mt-6 flex items-center justify-between rounded-2xl bg-[#22c55e] px-4 py-3 text-white transition hover:bg-[#16a34a]"
                 >
-                  <span className="inline-flex items-center gap-2 text-base font-extrabold" style={{height:"40px"}}>
+                  <span className="inline-flex min-h-10 items-center gap-2 text-base font-extrabold">
                     <MessageCircle className="h-5 w-5" />
                     Открыть WhatsApp
                   </span>

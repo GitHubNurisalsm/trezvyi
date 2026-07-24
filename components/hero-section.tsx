@@ -13,6 +13,9 @@ export function HeroSection() {
       <p className="mt-6 text-xl md:text-2xl font-extrabold text-black">
         БИШКЕК И ПРИГОРОД
       </p>
+      <p className="mt-5 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg">
+        Приедем по указанному адресу и отвезём вас домой на вашем автомобиле. Работаем круглосуточно.
+      </p>
 
       <Link
         href="/zakaz-v-1-klik"

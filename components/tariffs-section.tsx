@@ -1,9 +1,4 @@
-const prices = [
-  { service: "Город", price: "от 800 с" },
-  { service: "Доставка бензина", price: "от 500 с" },
-  { service: "Подкачка / Прикурить", price: "400-500 с" },
-  { service: "Буксировка", price: "от 1500 с" },
-];
+import { services } from "@/lib/services";
 
 export function TariffsSection() {
   return (
@@ -13,13 +8,13 @@ export function TariffsSection() {
           ЦЕНЫ
         </h2>
         <ul className="flex flex-col gap-6">
-          {prices.map((item) => (
+          {services.map((item) => (
             <li
-              key={item.service}
+              key={item.title}
               className="flex flex-col md:flex-row justify-between md:items-center py-5 md:py-6 border-b-4 border-black gap-4"
             >
               <span className="text-xl md:text-2xl font-extrabold text-black">
-                {item.service}
+                {item.shortTitle}
               </span>
               <span className="text-xl md:text-2xl font-black text-black">
                 {item.price}

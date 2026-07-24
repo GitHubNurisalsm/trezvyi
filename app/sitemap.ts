@@ -14,5 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${siteConfig.url}/trezvyi-voditel-bishkek`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }

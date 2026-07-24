@@ -1,31 +1,30 @@
-const phoneNumbers = [
-  {
-    operator: "O!",
-    number: "0507 77-79-61",
-    tel: "+996507777961",
-    bgColor: "bg-[#E30611]",
-    textColor: "text-white",
-  },
-];
+import { MessageCircle, Phone } from "lucide-react";
+
+import { siteConfig } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="w-full px-6 py-16 md:py-24 bg-white flex flex-col items-center justify-center">
-      <div className="max-w-6xl mx-auto w-full flex flex-col gap-6 md:gap-8 items-center justify-center">
-        {phoneNumbers.map((phone) => (
-          <a
-            key={phone.operator}
-            href={`tel:${phone.tel}`}
-            className={`block w-full min-h-[70px] md:min-h-[80px] py-5 md:py-6 ${phone.bgColor} rounded-2xl text-center shadow-lg hover:shadow-xl transition-shadow`}
-          >
-            <span className={`text-2xl md:text-3xl font-black ${phone.textColor}`}>
-              {phone.number}
-            </span>
-          </a>
-        ))}
+      <div className="mx-auto grid w-full max-w-6xl gap-4 md:grid-cols-2">
+        <a
+          href={`tel:${siteConfig.phone}`}
+          className="flex min-h-[76px] items-center justify-center gap-3 rounded-2xl bg-black px-5 py-5 text-center text-xl font-black text-white shadow-lg transition hover:-translate-y-1 md:text-2xl"
+        >
+          <Phone className="h-6 w-6" />
+          {siteConfig.internationalDisplayPhone}
+        </a>
+        <a
+          href={siteConfig.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex min-h-[76px] items-center justify-center gap-3 rounded-2xl bg-[#22c55e] px-5 py-5 text-center text-xl font-black text-black shadow-lg transition hover:-translate-y-1 md:text-2xl"
+        >
+          <MessageCircle className="h-6 w-6" />
+          Написать в WhatsApp
+        </a>
       </div>
-      <p className="mt-10 text-center text-xl font-black text-black w-full">
-        24/7 КРУГЛОСУТОЧНО
+      <p className="mt-10 w-full text-center text-xl font-black text-black">
+        {siteConfig.name} · БИШКЕК · 24/7
       </p>
     </footer>
   );
