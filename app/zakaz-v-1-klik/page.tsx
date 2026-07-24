@@ -1,9 +1,25 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowLeft, ChevronRight, MessageCircle } from "lucide-react";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { getWhatsAppLink, oneClickServices } from "@/lib/whatsapp";
+
+export const metadata: Metadata = {
+  title: "Заказать трезвого водителя в Бишкеке",
+  description:
+    "Закажите трезвого водителя или помощь на дороге в Бишкеке через WhatsApp. Работаем круглосуточно.",
+  alternates: {
+    canonical: "/zakaz-v-1-klik",
+  },
+  openGraph: {
+    url: "/zakaz-v-1-klik",
+    title: "Заказать трезвого водителя в Бишкеке",
+    description:
+      "Быстрый заказ трезвого водителя и помощи на дороге через WhatsApp.",
+  },
+};
 
 export default function OneClickOrderPage() {
   return (
