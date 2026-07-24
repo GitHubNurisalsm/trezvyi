@@ -8,15 +8,15 @@ const facts = ["24/7", "от 800 сом", "Бишкек и пригород"] as
 
 export function HeroSection() {
   return (
-    <section className="px-4 pb-12 pt-8 md:px-6 md:pb-16 md:pt-12">
-      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_0.92fr] md:items-center lg:gap-14">
+    <section className="px-4 pb-12 pt-8 sm:px-6 md:pb-16 md:pt-12">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:gap-14">
         <div>
           <div className="inline-flex items-center gap-2 rounded-lg bg-green-50 px-3 py-2 text-sm font-bold text-green-700">
             <span className="h-2 w-2 rounded-full bg-green-500" />
             Работаем круглосуточно
           </div>
 
-          <h1 className="text-balance mt-5 max-w-2xl text-[2.7rem] font-black leading-[1.02] tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-[4rem]">
+          <h1 className="text-balance mt-5 max-w-2xl text-4xl font-black leading-[1.05] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[4rem] lg:leading-[1.02]">
             Трезвый водитель в Бишкеке
           </h1>
           <p className="text-pretty mt-5 max-w-xl text-lg leading-7 text-slate-600 md:text-xl md:leading-8">
@@ -54,13 +54,13 @@ export function HeroSection() {
           </ul>
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-slate-100 shadow-[0_20px_45px_rgba(15,23,42,0.12)]">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_45px_rgba(15,23,42,0.12)] sm:aspect-[16/10] lg:aspect-[4/3]">
           <Image
             src="/images/driver.jpg"
             alt="Трезвый водитель за рулём автомобиля клиента"
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 45vw"
+            sizes="(max-width: 1023px) 100vw, 45vw"
             className="object-cover"
           />
           <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/92 p-4 shadow-lg backdrop-blur-sm">

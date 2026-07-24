@@ -38,7 +38,7 @@ export default function OneClickOrderPage() {
             <p className="mt-4 text-lg leading-7 text-slate-600">Нажмите на звонок или WhatsApp. Никаких форм заполнять не нужно.</p>
           </div>
 
-          <article className="mt-8 grid overflow-hidden rounded-2xl bg-white shadow-[0_12px_32px_rgba(15,23,42,0.07)] md:grid-cols-[1fr_0.82fr]">
+          <article className="mt-8 grid overflow-hidden rounded-2xl bg-white shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:grid-cols-[1fr_0.82fr]">
             <div className="p-6 md:p-8">
               <span className="text-sm font-extrabold text-green-700">Главная услуга</span>
               <h2 className="mt-2 text-3xl font-black tracking-[-0.03em] text-slate-950">Трезвый водитель</h2>

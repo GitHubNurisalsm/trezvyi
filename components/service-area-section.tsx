@@ -6,7 +6,7 @@ import { getWhatsAppLink } from "@/lib/whatsapp";
 export function ServiceAreaSection() {
   return (
     <section className="bg-green-50 px-4 py-14 md:px-6 md:py-16">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1fr_0.8fr] md:items-center">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
         <div>
           <p className="text-sm font-extrabold text-green-700">Территория выезда</p>
           <h2 className="text-balance mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 md:text-4xl">Бишкек и ближайшие районы</h2>

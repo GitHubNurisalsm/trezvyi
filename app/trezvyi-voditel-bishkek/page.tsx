@@ -82,7 +82,7 @@ export default function SoberDriverPage() {
             <ArrowLeft className="h-4 w-4" />
             На главную
           </Link>
-          <div className="mt-8 grid gap-10 md:grid-cols-[1.25fr_0.75fr] md:items-end">
+          <div className="mt-8 grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
             <div>
               <p className="text-sm font-extrabold text-green-700">Выездная услуга · 24/7</p>
               <h1 className="text-balance mt-3 text-4xl font-black tracking-[-0.04em] text-slate-950 md:text-5xl">Трезвый водитель в Бишкеке</h1>
@@ -101,7 +101,7 @@ export default function SoberDriverPage() {
       </section>
 
       <section className="px-4 py-14 md:px-6 md:py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div>
             <p className="text-sm font-black text-[#238d43]">Когда пригодится</p>
             <h2 className="text-balance mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 md:text-4xl">Ваш автомобиль останется с вами</h2>

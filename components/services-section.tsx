@@ -18,7 +18,7 @@ export function ServicesSection() {
           <p className="max-w-xl leading-6 text-slate-600">Все услуги доступны по тому же номеру. Цену уточняем до выезда.</p>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
           {roadServices.map((service) => (
             <article key={service.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
               <div className="relative aspect-[16/8] overflow-hidden bg-slate-100">
@@ -26,18 +26,16 @@ export function ServicesSection() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
+                  sizes="(max-width: 767px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
               <div className="p-5 md:p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-extrabold text-slate-950">{service.title}</h3>
-                    <p className="mt-2 leading-6 text-slate-600">{service.description}</p>
-                  </div>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h3 className="text-xl font-extrabold text-slate-950">{service.title}</h3>
                   <p className="shrink-0 rounded-lg bg-green-50 px-3 py-2 text-sm font-black text-green-700">{service.price}</p>
                 </div>
+                <p className="mt-3 leading-6 text-slate-600">{service.description}</p>
                 <a
                   href={getWhatsAppLink(service.message)}
                   target="_blank"
