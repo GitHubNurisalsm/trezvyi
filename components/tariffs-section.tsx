@@ -16,7 +16,7 @@ export function TariffsSection() {
               <span className="text-xl md:text-2xl font-extrabold text-black">
                 {item.shortTitle}
               </span>
-              <span className="text-xl md:text-2xl font-black text-black">
+              <span className="text-3xl font-black tracking-[-0.035em] text-green-700 md:text-4xl">
                 {item.price}
               </span>
             </li>

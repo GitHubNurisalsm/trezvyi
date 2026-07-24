@@ -92,7 +92,7 @@ export default function SoberDriverPage() {
             </div>
             <div className="rounded-2xl bg-white p-6 text-slate-950 shadow-[0_12px_32px_rgba(15,23,42,0.07)]">
               <p className="text-sm font-extrabold text-green-700">Стоимость</p>
-              <p className="mt-2 text-3xl font-black">от 800 сом</p>
+              <p className="mt-2 text-4xl font-black tracking-[-0.04em] text-green-700 sm:text-5xl">от 800 сом</p>
               <p className="mt-3 text-sm leading-6 text-slate-600">Итоговую цену согласуем до начала поездки.</p>
               <div className="mt-6"><ContactActions /></div>
             </div>

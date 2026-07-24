@@ -4,7 +4,7 @@ import { Check, MessageCircle, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 
-const facts = ["24/7", "от 800 сом", "Бишкек и пригород"] as const;
+const facts = ["24/7", "Бишкек и пригород"] as const;
 
 export function HeroSection() {
   return (
@@ -22,6 +22,11 @@ export function HeroSection() {
           <p className="text-pretty mt-5 max-w-xl text-lg leading-7 text-slate-600 md:text-xl md:leading-8">
             Приедем по указанному адресу и отвезём вас домой на вашем автомобиле.
           </p>
+
+          <div className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="text-sm font-extrabold uppercase tracking-wide text-slate-500">Стоимость</span>
+            <strong className="text-3xl font-black tracking-[-0.04em] text-green-700 sm:text-4xl">от 800 сом</strong>
+          </div>
 
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <a

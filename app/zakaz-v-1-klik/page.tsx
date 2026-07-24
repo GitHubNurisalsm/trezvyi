@@ -43,7 +43,7 @@ export default function OneClickOrderPage() {
               <span className="text-sm font-extrabold text-green-700">Главная услуга</span>
               <h2 className="mt-2 text-3xl font-black tracking-[-0.03em] text-slate-950">Трезвый водитель</h2>
               <p className="mt-3 max-w-xl leading-7 text-slate-600">{primaryService.description}</p>
-              <p className="mt-4 text-xl font-black text-green-700">{primaryService.price}</p>
+              <p className="mt-5 text-3xl font-black tracking-[-0.035em] text-green-700 sm:text-4xl">{primaryService.price}</p>
             </div>
             <div className="grid gap-3 bg-green-50 p-5 md:p-6">
               <a href={`tel:${siteConfig.phone}`} className="tap-action inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-green-500 px-5 text-base font-black text-slate-950 hover:bg-green-400">
@@ -62,7 +62,7 @@ export default function OneClickOrderPage() {
                 <a key={service.title} href={getWhatsAppLink(service.message)} target="_blank" rel="noopener noreferrer" className="tap-action flex min-h-[96px] items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:border-green-300 hover:bg-green-50/40">
                   <span>
                     <span className="block text-lg font-extrabold text-slate-950">{service.title}</span>
-                    <span className="mt-1 block text-sm font-bold text-green-700">{service.price}</span>
+                    <span className="mt-2 block text-xl font-black tracking-[-0.025em] text-green-700 sm:text-2xl">{service.price}</span>
                   </span>
                   <MessageCircle className="h-6 w-6 shrink-0 text-green-600" />
                 </a>

@@ -33,7 +33,7 @@ export function ServicesSection() {
               <div className="p-5 md:p-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <h3 className="text-xl font-extrabold text-slate-950">{service.title}</h3>
-                  <p className="shrink-0 rounded-lg bg-green-50 px-3 py-2 text-sm font-black text-green-700">{service.price}</p>
+                  <p className="shrink-0 rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-xl font-black tracking-[-0.025em] text-green-700 sm:text-2xl">{service.price}</p>
                 </div>
                 <p className="mt-3 leading-6 text-slate-600">{service.description}</p>
                 <a
