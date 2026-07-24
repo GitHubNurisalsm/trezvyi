@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
-  --color-background: #f5f3ed;
-  --color-foreground: #171a17;
-  --color-whatsapp: #42d36b;
-  --color-whatsapp-hover: #2fbd57;
-  --color-muted: #e9e7df;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #17201a;
 }
 
 * {
@@ -20,16 +17,11 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background: #ffffff;
+  color: #17201a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.display-font {
-  font-family: "Arial Rounded MT Bold", "Avenir Next", Avenir, system-ui, sans-serif;
-  letter-spacing: -0.055em;
 }
 
 .text-pretty {
@@ -40,22 +32,16 @@ body {
   text-wrap: balance;
 }
 
-.surface-noise {
-  background-image:
-    radial-gradient(circle at 0 0, rgb(255 255 255 / 7%) 0, transparent 28%),
-    radial-gradient(circle at 100% 100%, rgb(66 211 107 / 11%) 0, transparent 32%);
-}
-
 .tap-action {
-  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
 .tap-action:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .tap-action:active {
-  transform: translateY(1px) scale(0.985);
+  transform: translateY(1px) scale(0.99);
 }
 
 .skip-link {
@@ -65,7 +51,7 @@ body {
   z-index: 50;
   transform: translateY(-160%);
   border-radius: 0.75rem;
-  background: #171a17;
+  background: #17201a;
   color: white;
   padding: 0.75rem 1rem;
   font-weight: 800;
@@ -78,6 +64,6 @@ body {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #42d36b;
+  outline: 3px solid #22c55e;
   outline-offset: 3px;
 }

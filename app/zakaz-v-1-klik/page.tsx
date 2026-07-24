@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -11,8 +11,7 @@ import { getWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Заказать трезвого водителя в Бишкеке",
-  description:
-    "Закажите трезвого водителя или помощь на дороге в Бишкеке по телефону или через WhatsApp. Работаем круглосуточно.",
+  description: "Закажите трезвого водителя или помощь на дороге в Бишкеке по телефону или через WhatsApp. Работаем круглосуточно.",
   alternates: { canonical: "/zakaz-v-1-klik" },
   openGraph: {
     url: "/zakaz-v-1-klik",
@@ -25,79 +24,53 @@ export default function OneClickOrderPage() {
   const roadServices = services.filter((service) => !service.featured);
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#f5f3ed] pb-24 md:pb-0">
+    <main id="main-content" className="min-h-screen bg-slate-50 pb-24 md:pb-0">
       <Header />
-
-      <section className="px-4 pb-14 pt-5 md:px-8 md:pb-20 md:pt-8">
-        <div className="mx-auto max-w-7xl">
-          <Link
-            href="/"
-            className="tap-action inline-flex min-h-11 items-center gap-2 rounded-xl bg-white px-4 text-sm font-black text-[#171a17]"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            На главную
+      <section className="px-4 py-8 md:px-6 md:py-12">
+        <div className="mx-auto max-w-6xl">
+          <Link href="/" className="tap-action inline-flex h-11 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-700 hover:bg-slate-50">
+            <ArrowLeft className="h-4 w-4" /> На главную
           </Link>
 
-          <div className="surface-noise mt-5 overflow-hidden rounded-[2rem] bg-[#171a17] px-6 py-9 text-white md:rounded-[2.75rem] md:px-12 md:py-12">
-            <p className="text-sm font-black text-[#63e587]">Заказ без регистрации</p>
-            <h1 className="display-font text-balance mt-3 max-w-4xl text-5xl font-black leading-[0.95] md:text-7xl">Что вам нужно?</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/60">Выберите один вариант. Никаких форм — сразу звонок или готовое сообщение.</p>
+          <div className="mt-6 max-w-2xl">
+            <p className="text-sm font-extrabold text-green-700">Заказ без регистрации</p>
+            <h1 className="text-balance mt-2 text-4xl font-black tracking-[-0.04em] text-slate-950 md:text-5xl">Выберите нужную услугу</h1>
+            <p className="mt-4 text-lg leading-7 text-slate-600">Нажмите на звонок или WhatsApp. Никаких форм заполнять не нужно.</p>
           </div>
 
-          <article className="mt-5 grid overflow-hidden rounded-[2rem] bg-white shadow-[0_18px_48px_rgba(23,26,23,0.07)] md:grid-cols-[1fr_0.85fr]">
-            <div className="p-6 md:p-10">
-              <span className="inline-flex rounded-xl bg-[#dff7e5] px-3 py-2 text-sm font-black text-[#196f34]">Главная услуга</span>
-              <h2 className="display-font text-balance mt-5 text-4xl font-black leading-none text-[#171a17] md:text-5xl">Нужен трезвый водитель?</h2>
-              <p className="text-pretty mt-4 max-w-xl text-lg leading-relaxed text-[#171a17]/58">{primaryService.description}</p>
-              <p className="mt-5 text-2xl font-black text-[#238d43]">{primaryService.price}</p>
+          <article className="mt-8 grid overflow-hidden rounded-2xl bg-white shadow-[0_12px_32px_rgba(15,23,42,0.07)] md:grid-cols-[1fr_0.82fr]">
+            <div className="p-6 md:p-8">
+              <span className="text-sm font-extrabold text-green-700">Главная услуга</span>
+              <h2 className="mt-2 text-3xl font-black tracking-[-0.03em] text-slate-950">Трезвый водитель</h2>
+              <p className="mt-3 max-w-xl leading-7 text-slate-600">{primaryService.description}</p>
+              <p className="mt-4 text-xl font-black text-green-700">{primaryService.price}</p>
             </div>
-            <div className="grid gap-3 bg-[#edf8ef] p-5 md:p-8">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="tap-action inline-flex min-h-[76px] items-center justify-center gap-3 rounded-2xl bg-[#42d36b] px-5 text-xl font-black text-[#101510]"
-              >
-                <Phone className="h-6 w-6" strokeWidth={2.7} />
-                Позвонить сейчас
+            <div className="grid gap-3 bg-green-50 p-5 md:p-6">
+              <a href={`tel:${siteConfig.phone}`} className="tap-action inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-green-500 px-5 text-base font-black text-slate-950 hover:bg-green-400">
+                <Phone className="h-5 w-5" /> Позвонить
               </a>
-              <a
-                href={getWhatsAppLink(primaryService.message)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tap-action inline-flex min-h-[68px] items-center justify-center gap-3 rounded-2xl bg-white px-5 text-lg font-black text-[#171a17]"
-              >
-                <MessageCircle className="h-6 w-6" />
-                Написать в WhatsApp
+              <a href={getWhatsAppLink(primaryService.message)} target="_blank" rel="noopener noreferrer" className="tap-action inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 text-base font-extrabold text-slate-900 hover:bg-slate-50">
+                <MessageCircle className="h-5 w-5 text-green-600" /> WhatsApp
               </a>
             </div>
           </article>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-[0.62fr_1.38fr]">
-            <div>
-              <p className="text-sm font-black text-[#238d43]">Другая помощь</p>
-              <h2 className="display-font mt-3 text-4xl font-black leading-none text-[#171a17] md:text-5xl">Выберите услугу</h2>
-            </div>
-            <div className="grid gap-3">
-              {roadServices.map((service, index) => (
-                <a
-                  key={service.title}
-                  href={getWhatsAppLink(service.message)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="tap-action group grid min-h-[92px] grid-cols-[auto_1fr_auto] items-center gap-4 rounded-[1.4rem] bg-white px-5 py-4 shadow-[0_10px_28px_rgba(23,26,23,0.04)] md:px-6"
-                >
-                  <span className="display-font inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#edf8ef] text-lg font-black text-[#196f34]">{index + 1}</span>
+          <div className="mt-12">
+            <h2 className="text-2xl font-black tracking-[-0.025em] text-slate-950">Другая помощь в дороге</h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {roadServices.map((service) => (
+                <a key={service.title} href={getWhatsAppLink(service.message)} target="_blank" rel="noopener noreferrer" className="tap-action flex min-h-[96px] items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:border-green-300 hover:bg-green-50/40">
                   <span>
-                    <span className="block text-lg font-black text-[#171a17]">{service.title}</span>
-                    <span className="mt-1 block text-sm font-bold text-[#238d43]">{service.price}</span>
+                    <span className="block text-lg font-extrabold text-slate-950">{service.title}</span>
+                    <span className="mt-1 block text-sm font-bold text-green-700">{service.price}</span>
                   </span>
-                  <ArrowUpRight className="h-6 w-6 text-[#171a17]/35 transition group-hover:text-[#238d43]" />
+                  <MessageCircle className="h-6 w-6 shrink-0 text-green-600" />
                 </a>
               ))}
             </div>
           </div>
         </div>
       </section>
-
       <Footer />
       <MobileActionBar />
     </main>

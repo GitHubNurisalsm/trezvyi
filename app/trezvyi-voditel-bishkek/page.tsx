@@ -67,7 +67,7 @@ const pageJsonLd = {
 
 export default function SoberDriverPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-[#f5f3ed] pb-24 md:pb-0">
+    <main id="main-content" className="min-h-screen bg-white pb-24 md:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -76,35 +76,35 @@ export default function SoberDriverPage() {
       />
       <Header />
 
-      <section className="px-4 pb-10 pt-4 text-white md:px-8 md:pb-16 md:pt-6">
-        <div className="surface-noise mx-auto max-w-7xl rounded-[2rem] bg-[#171a17] px-6 py-10 md:rounded-[2.75rem] md:px-12 md:py-14 lg:px-16">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-white/75 hover:text-white">
+      <section className="bg-green-50 px-4 py-10 md:px-6 md:py-14">
+        <div className="mx-auto max-w-6xl">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-950">
             <ArrowLeft className="h-4 w-4" />
             На главную
           </Link>
           <div className="mt-8 grid gap-10 md:grid-cols-[1.25fr_0.75fr] md:items-end">
             <div>
-              <p className="text-sm font-black text-[#63e587]">Выездная услуга · 24/7</p>
-              <h1 className="display-font text-balance mt-4 text-5xl font-black leading-[0.95] md:text-7xl">Трезвый водитель в Бишкеке</h1>
-              <p className="text-pretty mt-6 max-w-3xl text-lg leading-relaxed text-white/65 md:text-xl">
+              <p className="text-sm font-extrabold text-green-700">Выездная услуга · 24/7</p>
+              <h1 className="text-balance mt-3 text-4xl font-black tracking-[-0.04em] text-slate-950 md:text-5xl">Трезвый водитель в Бишкеке</h1>
+              <p className="text-pretty mt-5 max-w-3xl text-lg leading-7 text-slate-600 md:text-xl md:leading-8">
                 Водитель приедет по указанному адресу и безопасно доставит вас до места назначения на вашем автомобиле.
               </p>
             </div>
-            <div className="rounded-[1.75rem] border border-white/12 bg-white/7 p-6 text-white backdrop-blur">
-              <p className="text-sm font-black text-[#63e587]">Стоимость</p>
-              <p className="display-font mt-2 text-4xl font-black">от 800 сом</p>
-              <p className="mt-3 text-sm leading-relaxed text-white/55">Итоговую цену согласуем до начала поездки.</p>
+            <div className="rounded-2xl bg-white p-6 text-slate-950 shadow-[0_12px_32px_rgba(15,23,42,0.07)]">
+              <p className="text-sm font-extrabold text-green-700">Стоимость</p>
+              <p className="mt-2 text-3xl font-black">от 800 сом</p>
+              <p className="mt-3 text-sm leading-6 text-slate-600">Итоговую цену согласуем до начала поездки.</p>
               <div className="mt-6"><ContactActions /></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-14 md:px-8 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+      <section className="px-4 py-14 md:px-6 md:py-16">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
           <div>
             <p className="text-sm font-black text-[#238d43]">Когда пригодится</p>
-            <h2 className="display-font text-balance mt-3 text-4xl font-black leading-none text-[#171a17] md:text-6xl">Ваш автомобиль останется с вами</h2>
+            <h2 className="text-balance mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 md:text-4xl">Ваш автомобиль останется с вами</h2>
             <p className="text-pretty mt-5 text-lg leading-relaxed text-[#171a17]/58">
               Услуга подходит, когда вы приехали на личном автомобиле, но не хотите или не можете продолжать поездку за рулём. Водитель управляет автомобилем клиента и доставляет его вместе с владельцем по согласованному маршруту.
             </p>
@@ -125,18 +125,18 @@ export default function SoberDriverPage() {
         </div>
       </section>
 
-      <section className="px-4 py-14 md:px-8 md:py-20">
-        <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#e9e7df] px-6 py-10 md:rounded-[2.75rem] md:px-12 md:py-14">
+      <section className="bg-slate-50 px-4 py-14 md:px-6 md:py-16">
+        <div className="mx-auto max-w-6xl">
           <p className="text-sm font-black text-[#238d43]">Порядок заказа</p>
-          <h2 className="display-font mt-3 text-4xl font-black leading-none text-[#171a17] md:text-6xl">Три шага до поездки</h2>
+          <h2 className="mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 md:text-4xl">Три шага до поездки</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               ["1", "Свяжитесь с нами", "Позвоните или напишите в WhatsApp."],
               ["2", "Сообщите маршрут", "Назовите адрес подачи и место назначения."],
               ["3", "Подтвердите заказ", "Согласуйте стоимость и ожидайте водителя."],
             ].map(([number, title, text]) => (
-              <article key={number} className="rounded-3xl bg-[#f5f3ed] p-6">
-                <span className="display-font text-4xl font-black text-[#238d43]">{number}</span>
+              <article key={number} className="rounded-2xl bg-white p-6 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+                <span className="text-2xl font-black text-green-700">{number}</span>
                 <h3 className="mt-5 text-xl font-black text-[#171a17]">{title}</h3>
                 <p className="mt-3 leading-relaxed text-[#171a17]/58">{text}</p>
               </article>

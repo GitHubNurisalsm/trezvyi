@@ -1,55 +1,51 @@
 import Image from "next/image";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 import { services } from "@/lib/services";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 
 export function ServicesSection() {
-  const otherServices = services.filter((service) => !service.featured);
+  const roadServices = services.filter((service) => !service.featured);
 
   return (
-    <section className="w-full px-4 py-14 md:px-8 md:py-20">
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+    <section className="px-4 py-14 md:px-6 md:py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-black text-[#238d43]">Если проблема с машиной</p>
-            <h2 className="display-font text-balance mt-3 text-4xl font-black leading-none text-[#171a17] md:text-6xl">Поможем в дороге</h2>
+            <p className="text-sm font-extrabold text-green-700">Дополнительная помощь</p>
+            <h2 className="mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 md:text-4xl">Помощь в дороге</h2>
           </div>
-          <p className="max-w-2xl text-lg leading-relaxed text-[#171a17]/58 md:justify-self-end">
-            Дополнительные услуги работают по тому же номеру. Стоимость уточняем до выезда.
-          </p>
+          <p className="max-w-xl leading-6 text-slate-600">Все услуги доступны по тому же номеру. Цену уточняем до выезда.</p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {otherServices.map((service) => (
-            <article
-              key={service.title}
-              className="group grid min-h-[220px] grid-cols-[0.92fr_1.08fr] overflow-hidden rounded-[1.75rem] bg-white shadow-[0_12px_32px_rgba(23,26,23,0.055)]"
-            >
-              <div className="relative min-h-full overflow-hidden">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {roadServices.map((service) => (
+            <article key={service.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              <div className="relative aspect-[16/8] overflow-hidden bg-slate-100">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 640px) 45vw, 25vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
-              <div className="flex flex-col p-5 sm:p-6">
-                <h3 className="text-pretty text-lg font-black leading-tight text-[#171a17] sm:text-xl">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#171a17]/55">{service.description}</p>
-                <p className="mt-3 text-base font-black text-[#238d43]">{service.price}</p>
+              <div className="p-5 md:p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-extrabold text-slate-950">{service.title}</h3>
+                    <p className="mt-2 leading-6 text-slate-600">{service.description}</p>
+                  </div>
+                  <p className="shrink-0 rounded-lg bg-green-50 px-3 py-2 text-sm font-black text-green-700">{service.price}</p>
+                </div>
                 <a
                   href={getWhatsAppLink(service.message)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="tap-action mt-auto inline-flex min-h-11 items-center justify-between rounded-xl bg-[#edf8ef] px-4 text-sm font-black text-[#196f34]"
+                  className="tap-action mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-4 text-sm font-extrabold text-white hover:bg-slate-800"
                 >
-                  <span className="inline-flex items-center gap-2">
-                    <MessageCircle className="h-4 w-4" />
-                    Заказать
-                  </span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  <MessageCircle className="h-5 w-5" />
+                  Заказать в WhatsApp
                 </a>
               </div>
             </article>
