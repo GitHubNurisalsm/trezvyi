@@ -1,16 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
-  --color-background: #ffffff;
-  --color-foreground: #000000;
-  --color-whatsapp: #25D366;
-  --color-whatsapp-hover: #1da851;
-  --color-o-operator: #E30611;
-  --color-megacom: #6B2D83;
-  --color-beeline: #FFB900;
-  --color-muted: #f5f5f5;
-  --radius: 1rem;
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+  --color-background: #f5f3ed;
+  --color-foreground: #171a17;
+  --color-whatsapp: #42d36b;
+  --color-whatsapp-hover: #2fbd57;
+  --color-muted: #e9e7df;
 }
 
 * {
@@ -31,9 +27,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.display-font {
+  font-family: "Arial Rounded MT Bold", "Avenir Next", Avenir, system-ui, sans-serif;
+  letter-spacing: -0.055em;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.surface-noise {
+  background-image:
+    radial-gradient(circle at 0 0, rgb(255 255 255 / 7%) 0, transparent 28%),
+    radial-gradient(circle at 100% 100%, rgb(66 211 107 / 11%) 0, transparent 32%);
+}
+
+.tap-action {
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.tap-action:hover {
+  transform: translateY(-2px);
+}
+
+.tap-action:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  transform: translateY(-160%);
+  border-radius: 0.75rem;
+  background: #171a17;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #16a34a;
+  outline: 3px solid #42d36b;
   outline-offset: 3px;
 }

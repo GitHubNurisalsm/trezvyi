@@ -15,18 +15,20 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="w-full bg-black px-6 py-16 text-white md:py-24">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-sm font-black uppercase tracking-[0.25em] text-[#86efac]">Как это работает</p>
-        <h2 className="mt-3 max-w-3xl text-3xl font-black md:text-5xl">Трезвый водитель на вашем автомобиле</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+    <section className="w-full px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="text-sm font-black text-[#238d43]">Всё просто</p>
+          <h2 className="display-font text-balance mt-3 text-4xl font-black leading-none text-[#171a17] md:text-6xl">Три понятных шага</h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#171a17]/58">Не нужно заполнять формы и регистрироваться.</p>
+        </div>
+        <div className="mt-10 grid gap-3 md:grid-cols-3">
           {steps.map((step, index) => (
-            <article key={step.title} className="rounded-3xl border-2 border-white/20 bg-white/5 p-6">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#22c55e] text-lg font-black text-black">
-                {index + 1}
-              </span>
-              <h3 className="mt-5 text-xl font-black">{step.title}</h3>
-              <p className="mt-3 leading-relaxed text-white/75">{step.text}</p>
+            <article key={step.title} className="relative overflow-hidden rounded-[1.75rem] bg-white p-6 shadow-[0_12px_32px_rgba(23,26,23,0.055)] md:p-7">
+              <span className="display-font absolute right-4 top-1 text-8xl font-black text-[#42d36b]/13">{index + 1}</span>
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#dff7e5] text-base font-black text-[#196f34]">{index + 1}</span>
+              <h3 className="mt-8 text-xl font-black text-[#171a17]">{step.title}</h3>
+              <p className="text-pretty mt-3 max-w-sm leading-relaxed text-[#171a17]/58">{step.text}</p>
             </article>
           ))}
         </div>

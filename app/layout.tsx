@@ -78,7 +78,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <a href="#main-content" className="skip-link">Перейти к содержанию</a>
+        {children}
+      </body>
     </html>
   );
 }

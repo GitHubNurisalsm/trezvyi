@@ -1,10 +1,10 @@
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
-import { TariffsSection } from "@/components/tariffs-section";
 import { Footer } from "@/components/footer";
 import { HowItWorksSection } from "@/components/how-it-works-section";
 import { ServiceAreaSection } from "@/components/service-area-section";
+import { MobileActionBar } from "@/components/mobile-action-bar";
 import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
@@ -53,7 +53,7 @@ const localBusinessJsonLd = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-[#f5f3ed] pb-24 md:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -64,9 +64,9 @@ export default function Home() {
       <HeroSection />
       <HowItWorksSection />
       <ServicesSection />
-      <TariffsSection />
       <ServiceAreaSection />
       <Footer />
+      <MobileActionBar />
     </main>
   );
 }

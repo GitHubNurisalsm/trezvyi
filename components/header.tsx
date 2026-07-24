@@ -5,9 +5,10 @@ import { siteConfig } from "@/lib/site";
 
 export function Header() {
   return (
-    <header className="w-full py-5 px-6 md:px-8 flex items-center justify-center bg-white border-b-2 border-gray-100">
-      <div className="w-full max-w-6xl mx-auto flex items-center justify-between px-0">
-        <Link href="/" className="text-2xl font-black tracking-tight text-black md:text-3xl">
+    <header className="sticky top-0 z-30 w-full border-b border-black/5 bg-[#f5f3ed]/92 px-4 py-3 backdrop-blur-xl md:px-8 md:py-4">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+        <Link href="/" className="display-font inline-flex items-center gap-2 text-xl font-black text-[#171a17] md:text-2xl">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#42d36b] shadow-[0_0_0_5px_rgba(66,211,107,0.14)]" />
           {siteConfig.name}
         </Link>
         <div className="flex items-center gap-2">
@@ -16,15 +17,17 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в WhatsApp"
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-[#22c55e] text-black transition hover:bg-[#16a34a]"
+            className="tap-action hidden min-h-11 items-center justify-center gap-2 rounded-xl bg-white px-4 text-sm font-extrabold text-[#171a17] shadow-[0_6px_20px_rgba(23,26,23,0.06)] sm:inline-flex"
           >
-            <MessageCircle className="h-5 w-5" strokeWidth={3} />
+            <MessageCircle className="h-5 w-5" strokeWidth={2.5} />
+            WhatsApp
           </a>
           <a
             href={`tel:${siteConfig.phone}`}
-            className="flex min-h-11 items-center gap-2 rounded-full border-2 border-black px-3 text-base font-bold text-black md:text-lg"
+            className="tap-action flex min-h-11 items-center gap-2 rounded-xl bg-[#171a17] px-4 text-sm font-black text-white md:text-base"
           >
-            <Phone className="h-5 w-5" strokeWidth={3} />
+            <Phone className="h-5 w-5" strokeWidth={2.5} />
+            <span className="sm:hidden">Позвонить</span>
             <span className="hidden sm:inline">{siteConfig.displayPhone}</span>
           </a>
         </div>
