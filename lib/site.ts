@@ -19,4 +19,6 @@ export const siteConfig = {
   phone: "+996507777961",
   displayPhone: "0507 77-79-61",
   locale: "ru_KG",
+  googleSiteVerification:
+    "NFGS1ctjsjeYQrfHpJ9sCVew2FtwcfBrMg2pWI0Rf2E",
 };
