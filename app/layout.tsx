@@ -19,18 +19,18 @@ export const metadata: Metadata = {
     "доставка бензина Бишкек",
   ],
   alternates: {
-    canonical: "/",
+    canonical: `${siteConfig.url}/`,
   },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    url: "/",
+    url: `${siteConfig.url}/`,
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
     images: [
       {
-        url: "/images/driver.jpg",
+        url: `${siteConfig.url}/images/driver.jpg`,
         width: 1024,
         height: 1024,
         alt: "Трезвый водитель в Бишкеке",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/images/driver.jpg"],
+    images: [`${siteConfig.url}/images/driver.jpg`],
   },
   robots: {
     index: true,

@@ -9,14 +9,26 @@ import { primaryService, services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 
+const canonicalUrl = `${siteConfig.url}/zakaz-v-1-klik`;
+const pageTitle = "Заказать трезвого водителя в Бишкеке";
+const pageDescription = "Закажите трезвого водителя или помощь на дороге в Бишкеке по телефону или через WhatsApp. Работаем круглосуточно.";
+
 export const metadata: Metadata = {
-  title: "Заказать трезвого водителя в Бишкеке",
-  description: "Закажите трезвого водителя или помощь на дороге в Бишкеке по телефону или через WhatsApp. Работаем круглосуточно.",
-  alternates: { canonical: "/zakaz-v-1-klik" },
+  title: pageTitle,
+  description: pageDescription,
+  alternates: { canonical: canonicalUrl },
   openGraph: {
-    url: "/zakaz-v-1-klik",
-    title: "Заказать трезвого водителя в Бишкеке",
+    type: "website",
+    url: canonicalUrl,
+    title: pageTitle,
     description: "Быстрый заказ трезвого водителя по телефону или через WhatsApp.",
+    images: [`${siteConfig.url}/images/driver.jpg`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [`${siteConfig.url}/images/driver.jpg`],
   },
 };
 

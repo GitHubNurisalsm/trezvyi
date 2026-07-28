@@ -14,24 +14,31 @@ import { siteConfig } from "@/lib/site";
 const pageTitle = "Трезвый водитель в Бишкеке 24/7";
 const pageDescription =
   "Закажите трезвого водителя в Бишкеке: водитель приедет к вам и доставит вас домой на вашем автомобиле. Работаем круглосуточно, стоимость от 800 сом.";
+const canonicalUrl = `${siteConfig.url}/trezvyi-voditel-bishkek`;
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  alternates: { canonical: "/trezvyi-voditel-bishkek" },
+  alternates: { canonical: canonicalUrl },
   openGraph: {
     type: "website",
-    url: "/trezvyi-voditel-bishkek",
+    url: canonicalUrl,
     title: `${pageTitle} | ${siteConfig.name}`,
     description: pageDescription,
     images: [
       {
-        url: primaryService.image,
+        url: `${siteConfig.url}${primaryService.image}`,
         width: 1024,
         height: 1024,
         alt: "Услуга трезвого водителя в Бишкеке",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+    images: [`${siteConfig.url}${primaryService.image}`],
   },
 };
 
