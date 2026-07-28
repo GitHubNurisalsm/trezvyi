@@ -8,47 +8,59 @@ import { MobileActionBar } from "@/components/mobile-action-bar";
 import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
-const localBusinessJsonLd = {
+const homePageJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${siteConfig.url}/#business`,
-  name: siteConfig.name,
-  description: siteConfig.description,
-  url: siteConfig.url,
-  telephone: siteConfig.phone,
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: siteConfig.phone,
-    contactType: "customer service",
-    availableLanguage: ["ru", "ky"],
-    areaServed: "KG",
-  },
-  image: `${siteConfig.url}/images/driver.jpg`,
-  priceRange: "от 800 KGS",
-  areaServed: { "@type": "City", name: siteConfig.city },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    opens: "00:00",
-    closes: "23:59",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Услуги помощи водителям",
-    itemListElement: services.map((service) => ({
-      "@type": "Offer",
-      priceCurrency: "KGS",
-      itemOffered: { "@type": "Service", name: service.title },
-    })),
-  },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      url: `${siteConfig.url}/`,
+      name: siteConfig.name,
+      alternateName: ["Трезвый KG", "trezvyi.kg"],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      url: `${siteConfig.url}/`,
+      telephone: siteConfig.phone,
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        contactType: "customer service",
+        availableLanguage: ["ru", "ky"],
+        areaServed: "KG",
+      },
+      image: `${siteConfig.url}/images/driver.jpg`,
+      logo: `${siteConfig.url}/favicon-96x96.png`,
+      priceRange: "от 800 KGS",
+      areaServed: { "@type": "City", name: siteConfig.city },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Услуги помощи водителям",
+        itemListElement: services.map((service) => ({
+          "@type": "Offer",
+          priceCurrency: "KGS",
+          itemOffered: { "@type": "Service", name: service.title },
+        })),
+      },
+    },
+  ],
 };
 
 export default function Home() {
@@ -57,7 +69,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(homePageJsonLd).replace(/</g, "\\u003c"),
         }}
       />
       <Header />
